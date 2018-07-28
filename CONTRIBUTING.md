@@ -110,7 +110,7 @@
 
 ### d. adding a new library with its assets
 
-1. Libraries are stored in the ajax/libs directory. Each library has its own subdirectory of ajax/libs and each version of the library has its own subdirectory of the library directory name, for example:
+1. Libraries are stored in the `ajax/libs` directory. Each library has its own subdirectory of `ajax/libs` and each version of the library has its own subdirectory of the library directory name, for example:
  > /ajax/libs/jquery/2.0.0/
 
 2. We use [`package.json`](https://docs.npmjs.com/getting-started/using-a-package.json) to store the meta data of a library in [npm format](https://docs.npmjs.com/getting-started/using-a-package.json), please don't forget to add this file at the root of the lib.
@@ -124,18 +124,18 @@
 4. You **must** do `npm test` under the root directory of this project to make sure everything is fine.
  * Please refer to [Install npm test dependencies](https://github.com/cdnjs/cdnjs/blob/master/README.md#install-npm-test-dependencies) & [Run npm test to check all is well](https://github.com/cdnjs/cdnjs/blob/master/README.md#run-npm-test-to-check-all-is-well).
 
-5. For those libs can use auto-update, we should add [auto-update config](https://github.com/cdnjs/cdnjs/blob/master/documents/autoupdate.md) for it, so that we can pull the new versions automatically, as the first pull request to add a lib, you should still add its real files, unless you would like to try the method below to add a new library by a single package.json, or you won't pass the test.
+5. For those libs can use auto-update, we should add [auto-update config](https://github.com/cdnjs/cdnjs/blob/master/documents/autoupdate.md) for it, so that we can pull the new versions automatically, as the first pull request to add a lib, you should still add its real files, unless you would like to try the method below to add a new library by a single `package.json`, or you won't pass the test.
 
 
 ### e. adding a new library by a single package.json
 
-CDNJS now supports adding a new library by a single `package.json`: you just need to add a valid CDNJS package.json with npm/git auto-update config, and remove its `version` field in `package.json`, and we'll handle the remaining works.
+CDNJS now supports adding a new library by a single `package.json`: you just need to add a valid CDNJS `package.json` with npm/git auto-update config, and remove its `version` field in `package.json`, and we'll handle the remaining works.
 
 * [Fork the cdnjs repo](https://github.com/cdnjs/cdnjs/fork) to your own GitHub account.
-* Click the "Branch: master" dropdown, enter the name of the library being added, and choose "Create branch <LIBRARY_NAME> from master".
+* Click the `Branch: master` dropdown, enter the name of the library being added, and choose `Create branch <LIBRARY_NAME> from master`.
 * Go to `ajax/libs` directory.
-* Click "Create new file".
-* Enter `<LIBRARY_NAME>/package.json`, compose a valid [`package.json`] for the library being added, enter commit message and click "Commit new file".
+* Click `Create new file`.
+* Enter `<LIBRARY_NAME>/package.json`, compose a valid [`package.json`] for the library being added, enter commit message and click `Commit new file`.
 * Submit a pull request.
 
 Note that you should have a `filename` to point to the main file of a lib, if that file is not minified, please still use `filename.min.js` or `filename.min.css` structure naming, we'll do the minify job.
@@ -153,7 +153,7 @@ Note that you should have a `filename` to point to the main file of a lib, if th
 1. Because of the characteristic of git, it'll be better to do the work on Unix-like environment, like GNU/Linux or BSD distributions (not including Mac).
 
 2. If you think this doc is too simple or casual, please refer to another detail version of [CONTRIBUTING-WIP.md](https://github.com/cdnjs/cdnjs/blob/master/CONTRIBUTING-WIP.md) doc (but which may be out-dated).
- * If there are some conflicts between these files, the priority should be like this: CONTRIBUTING.md > CONTRIBUTING-WIP.md, and you can help us to open an issue to report and fix it.
+ * If there are some conflicts between these files, the priority should be like this: `CONTRIBUTING.md` > `CONTRIBUTING-WIP.md`, and you can help us to open an issue to report and fix it.
 
 3. No matter you are updating or adding a lib, if the library's **official** repo contains the dist files in each tag, or, if the library has **official** npm package, please add [auto-update config](https://github.com/cdnjs/cdnjs/blob/master/documents/autoupdate.md) for it.
 
